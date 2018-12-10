@@ -32,5 +32,7 @@
       <Button layoutX="411.0" layoutY="293.0" mnemonicParsing="false" onAction="#pressedBackButton" text="Back" />
       <TextField fx:id="usernameField" layoutX="377.0" layoutY="142.0" promptText="Username" />
       <PasswordField fx:id="passwordField" layoutX="377.0" layoutY="193.0" promptText="Password" />
+      <Label fx:id="loginErrorLabel" layoutX="52.0" layoutY="276.0" text="Username or password incorrect" textFill="RED" visible="false" />
+      <Label fx:id="incompleteFormLabel" layoutX="91.0" layoutY="312.0" text="Complete the forms" textFill="RED" visible="false" />
    </children>
 </Pane>

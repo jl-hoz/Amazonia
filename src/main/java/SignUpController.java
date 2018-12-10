@@ -9,6 +9,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import model.User;
 
 public class SignUpController {
 
@@ -37,14 +38,15 @@ public class SignUpController {
 
     @FXML
     void pressedSignUpButton(ActionEvent event) {
-    	if(!isValidEmail()) {
-    		invalidEmailLabel.setVisible(true);
-    	}else if(!isAllFormsComplete()){
+    	incompleteFormLabel.setVisible(false);
+    	if(!isAllFormsComplete()) {
     		incompleteFormLabel.setVisible(true);
     	}else {
+    		Main.user = new User(emailField.getText(), usernameField.getText(), passwordField.getText(), administratorCheckBox.isSelected());
+        	Main.userList.add(Main.user);
+        	Main.setToDataBase();
     		changeWindow("HomeView.fxml");
     	}
-    	
     }
 
     public void changeWindow(String xmlFile) {
@@ -60,15 +62,12 @@ public class SignUpController {
 		Main.window.show();
     }
     
-    private boolean isValidEmail() {
-    	return emailField.getText().contains("@.") && emailField.getText().contains(".");
-    }
-    
     private boolean isAllFormsComplete() {
+    	boolean formsComplete = true;
     	if(usernameField.getText().isEmpty() || passwordField.getText().isEmpty() || emailField.getText().isEmpty()) {
-    		return false;
+    		formsComplete = false;
     	}
-    	return true;
+    	return formsComplete;
     }
     
 }
