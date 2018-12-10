@@ -2,7 +2,7 @@ package model;
 
 /**
  * 
- * @author joseluis
+ * @author José Luis
  *
  */
 public class Book extends Product{
@@ -13,11 +13,11 @@ public class Book extends Product{
 	private Format format;
 	private String iSBM;
 		
-	private enum LiteraryGenre{
+	public enum LiteraryGenre{
 		SCIENCE_FICTION, ROMANTIC, DRAMA, COMEDY, TRAGEDY, HISTORY, ARTS
 	}
 	
-	private enum Format{
+	public enum Format{
 		EBOOK, HARDCOVER, PAPERBACK, AUDIOBOOK
 	}
 	
@@ -25,12 +25,8 @@ public class Book extends Product{
 		return numberOfPages;
 	}
 
-	public void setNumberOfPages(int numberOfPages) throws Exception{
-		if(numberOfPages < 0) {
-			throw new Exception();
-		}else {
-			this.numberOfPages = numberOfPages;
-		}
+	public void setNumberOfPages(int numberOfPages){
+		this.numberOfPages = numberOfPages;
 	}
 
 	public String getAuthor() {
@@ -61,12 +57,14 @@ public class Book extends Product{
 		return iSBM;
 	}
 
-	public void setISBN(String iSBN) throws Exception{
-		if(iSBN.length() < 0 || iSBN.length() > 13) {
-			throw new Exception();
-		}else {
-			this.iSBM = iSBN;
-		}
+	public void setISBN(String iSBN){
+		this.iSBM = iSBN;
 	}
+
+	@Override
+	public String toString() {
+		return title;
+	}
+	
 	
 }
