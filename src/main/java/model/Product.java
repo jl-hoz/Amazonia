@@ -18,11 +18,12 @@ public abstract class Product{
 	protected int stock;
 	protected Language language;
 	protected Department department;
+	protected double prize;
 	//TODO: product release?
 	
 	public static final int TITLE_LENGTH = 30;
 	
-	enum Department {
+	public enum Department {
 		MUSIC, BOOKS, FILMS 
 	}
 	
@@ -40,14 +41,8 @@ public abstract class Product{
 	 * @throws EmptyStringException
 	 * @throws TooManyCharException
 	 */
-	public void setTitle(String title) throws EmptyStringException, TooManyCharException{
-		if(title.isEmpty()) {
-			throw new EmptyStringException();
-		}else if(title.length() > TITLE_LENGTH) {
-			throw new TooManyCharException();
-		}else {
-			this.title = title;
-		}
+	public void setTitle(String title){
+		this.title = title;
 	}
 
 	/**
@@ -100,6 +95,23 @@ public abstract class Product{
 
 	public void setDepartment(Department department) {
 		this.department = department;
+	}
+	
+	public double getPrize() {
+		return prize;
+	}
+
+	public void setPrize(double prize) {
+		this.prize = prize;
+	}
+
+	public void setStock(int stock) {
+		this.stock = stock;
+	}
+
+	@Override
+	public String toString() {
+		return title;
 	}
 	
 }

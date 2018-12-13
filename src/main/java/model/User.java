@@ -49,14 +49,7 @@ public class User{
 	 * @param amount
 	 */
 	public void buyProduct(Product productToBuy, int amount) {
-		//TODO: implement availableStock to know if i can buy an amount of products.
-		/*
-		productToBuy.setProductStock(productToBuy.getProductStock() - amount);
-		Product copy = new Product();
-		copy.copyProduct(productToBuy);
-		copy.setProductStock(amount);
-		productHistory.add(copy);
-		*/
+		//TODO
 	}
 	
 	/**
@@ -65,7 +58,8 @@ public class User{
 	 * @param productToBuy
 	 */
 	public void buyProduct(Product productToBuy) {
-		this.buyProduct(productToBuy, 1);
+		productToBuy.setStock(1);
+		productHistory.add(productToBuy);
 	}
 	
 	/**
