@@ -16,7 +16,7 @@ Unix/Unix-like users execute build as:
 Windows users execute build as:
 ```
 gradlew.bat
-``
+```
 
 ## Credits
 
