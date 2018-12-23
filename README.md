@@ -18,6 +18,10 @@ Windows users execute build as:
 gradlew.bat
 ```
 
+## Version
+
+Initial version 0.0
+
 ## Credits
 
 Creator of the project: [@joseluishozg](https://github.com/joseluishozg)
