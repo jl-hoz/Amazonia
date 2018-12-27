@@ -18,9 +18,18 @@ Windows users execute build as:
 gradlew.bat
 ```
 
+## Threads
+
+When a user pressed the button buy this will create a thread that will pause the thread between 0 to 3 seconds. In this pause the button is disable and do not allow more purchases until the thread awake.
+
+![enable](./resources/enable.png) 
+
+![disable](./resources/disable.png) 
+
+
 ## Version
 
-Initial version 0.0
+Initial version 1.0
 
 ## Credits
 
