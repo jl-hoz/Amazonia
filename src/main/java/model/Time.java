@@ -19,7 +19,7 @@ public class Time extends Thread{
 	 * 
 	 * @return random int with 0 to 3000 range.
 	 */
-	private int generateRandomTime() {
+	public int generateRandomTime() {
 		Random x = new Random();
 		return x.nextInt(3000) + 1;
 	}
