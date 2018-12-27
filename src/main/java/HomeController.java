@@ -21,6 +21,7 @@ import model.Book.Format;
 import model.Book.LiteraryGenre;
 import model.Product;
 import model.Product.Department;
+import model.Time;
 
 public class HomeController implements Initializable{
 
@@ -62,9 +63,18 @@ public class HomeController implements Initializable{
     private Button profileButton;
 
     @FXML
+    private Button buyButton;
+    
+    @FXML
     void pressedBuyButton(ActionEvent event) {
+    	Time simulateServerRequest = new Time();
+    	buyButton.setVisible(false);
+    	buyButton.setDisable(false);
+    	simulateServerRequest.start();
+    	while(simulateServerRequest.isAlive());
+    	buyButton.setVisible(true);
+    	buyButton.setDisable(true);
     	Main.user.buyProduct(focusedProduct);
-    	focusedProduct.setStock(focusedProduct.getStock() - 1);
     }
 
     @FXML
